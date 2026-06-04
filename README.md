@@ -1,3 +1,3 @@
 # Thesis Notebooks
 
-The notebooks in the notebooks folder supplmenet the [thesis](http://thesislinkgoeshere.ie).
+The notebooks in the notebooks folder supplement the [thesis](http://thesislinkgoeshere.ie).
