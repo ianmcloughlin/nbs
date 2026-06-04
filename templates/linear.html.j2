@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Notebooks</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      font-size: 15px;
+      line-height: 1.6;
+      color: #1a1a1a;
+      background: #f9f9f9;
+      padding: 2rem 1rem;
+    }
+
+    .container {
+      max-width: 720px;
+      margin: 0 auto;
+      background: #fff;
+      border: 1px solid #e5e5e5;
+      border-radius: 8px;
+      padding: 2.5rem 3rem;
+    }
+
+    header {
+      margin-bottom: 2rem;
+      padding-bottom: 1.5rem;
+      border-bottom: 1px solid #e5e5e5;
+    }
+
+    h1 {
+      font-size: 1.4rem;
+      font-weight: 600;
+      letter-spacing: -0.01em;
+      color: #111;
+    }
+
+    h2 {
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: #999;
+      margin-bottom: 0.75rem;
+    }
+
+    section {
+      margin-bottom: 2rem;
+    }
+
+    ul {
+      list-style: none;
+      border-top: 1px solid #f0f0f0;
+    }
+
+    li {
+      border-bottom: 1px solid #f0f0f0;
+    }
+
+    a {
+      display: block;
+      padding: 0.55rem 0.25rem;
+      color: #2563eb;
+      text-decoration: none;
+      font-size: 0.95rem;
+    }
+
+    a:hover {
+      color: #1d4ed8;
+      background: #f5f8ff;
+      padding-left: 0.5rem;
+      transition: padding 0.1s ease;
+    }
+
+    footer {
+      margin-top: 2rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid #e5e5e5;
+      font-size: 0.8rem;
+      color: #999;
+      text-align: center;
+    }
+
+    footer a {
+      display: inline;
+      padding: 0;
+      color: #999;
+      text-decoration: underline;
+    }
+
+    footer a:hover {
+      color: #555;
+      background: none;
+      padding: 0;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>Thesis Sample Code</h1>
+    </header>
+
+    <main>
+      {% if notebooks %}
+      <section>
+        <h2>Notebooks</h2>
+        <ul>
+          {% for notebook in notebooks %}
+          <li><a href="{{ notebook.html_path }}">{{ notebook.display_name }}</a></li>
+          {% endfor %}
+        </ul>
+      </section>
+      {% endif %}
+
+      {% if apps %}
+      <section>
+        <h2>Apps</h2>
+        <ul>
+          {% for app in apps %}
+          <li><a href="{{ app.html_path }}">{{ app.display_name }}</a></li>
+          {% endfor %}
+        </ul>
+      </section>
+      {% endif %}
+    </main>
+
+    <footer>
+      Built with <a href="https://marimo.io" target="_blank">marimo</a>
+    </footer>
+  </div>
+</body>
+</html>
